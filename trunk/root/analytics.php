@@ -6,6 +6,7 @@ unset($dt);
 # 统计例子
 $query=mysql_query("select count(*) as i from hd_pride_log;");
 $ay=mysql_fetch_array($query);
+mysql_free_result($query); # 释放资源
 $sum_pride_numbers=$ay['i'];
 $pagecode.="从开始至今总的出奖次数: $sum_pride_numbers \n";
 
